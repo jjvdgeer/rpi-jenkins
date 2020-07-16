@@ -1,10 +1,6 @@
 # Jenkins Docker image for Raspberry Pi
 
-A basic Jenkins image that's compatible with Raspberry Pi. Automated builds are pushed whenever a new version of Jenkins becomes available.
-
-### Supported tags and respective `Dockerfile` links
-
-- [`2.62`](https://github.com/wouterds/rpi-jenkins/tree/2.62/Dockerfile), [`2.63`](https://github.com/wouterds/rpi-jenkins/tree/2.63/Dockerfile),  [`2.64`, `latest` (*Dockerfile*)](https://github.com/wouterds/rpi-jenkins/tree/2.64/Dockerfile)
+A basic Jenkins image that's compatible with QNAP TS-x31P2 (and others?).
 
 ### What is Jenkins?
 
