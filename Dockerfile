@@ -1,5 +1,5 @@
 FROM jsurf/rpi-raspbian:latest
-MAINTAINER finalformat <chrisf1031@gmail.com>
+MAINTAINER jjvdgeer <jjvdgeer@yahoo.com>
 
 # Jenkins version
 ENV JENKINS_VERSION 2.222.1

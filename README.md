@@ -17,18 +17,18 @@ Jenkins is an open source automation server written in Java. The project was for
 ### Usage
 
 ```
-docker run -p 8080:8080 -p 50000:50000 finalformat/rpi-jenkins
+docker run -p 8080:8080 -p 50000:50000 jjvdgeer/rpi-jenkins
 ```
 
 This will store the workspace in /var/jenkins_home. All Jenkins data lives in there - including plugins and configuration.
 You will probably want to make that an explicit volume so you can manage it and attach to another container for upgrades :
 
 ```
-docker run -p 8080:8080 -p 50000:50000 -v jenkins:/var/jenkins_home finalformat/rpi-jenkins
+docker run -p 8080:8080 -p 50000:50000 -v jenkins:/var/jenkins_home jjvdgeer/rpi-jenkins
 ```
 
 this will automatically create a 'jenkins' volume on docker host, that will survive container stop/restart/deletion.
 
 ---
 
-This image is available on [GitHub](https://github.com/finalformat/rpi-jenkins) & [DockerHub](https://hub.docker.com/r/finalformat/rpi-jenkins).
+This image is available on [GitHub](https://github.com/jjvdgeer/rpi-jenkins) & [DockerHub](https://hub.docker.com/r/jjvdgeer/rpi-jenkins).
