@@ -2,7 +2,7 @@ FROM arm32v7/ubuntu:latest
 MAINTAINER jjvdgeer <jjvdgeer@yahoo.com>
 
 # Jenkins version
-ENV JENKINS_VERSION 2.235.5
+ENV JENKINS_VERSION 2.249.1
 
 # Other env variables
 ENV JENKINS_HOME /var/jenkins_home
