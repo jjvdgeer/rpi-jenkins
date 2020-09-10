@@ -25,12 +25,12 @@ RUN uname -a && cat /etc/*release
 
 # Based on instructiions at https://docs.microsoft.com/en-us/dotnet/core/linux-prerequisites?tabs=netcore2x
 # Install depency for dotnet core 3.1.
-RUN curl https://download.visualstudio.microsoft.com/download/pr/a92a6358-52c3-472b-ad6d-d2d80abdcef4/37a7551a4e2c9e455caed5ef777a8983/dotnet-sdk-3.1.401-linux-arm.tar.gz --output dotnet-sdk-3.1.401-linux-arm.tar.gz \
-  && mkdir -p $HOME/dotnet && tar zxf dotnet-sdk-3.1.401-linux-arm.tar.gz -C $HOME/dotnet \
+RUN curl https://download.visualstudio.microsoft.com/download/pr/8f0dffe3-18f0-4d32-beb0-dbcb9a0d91a1/abe9a34e3f8916478f0bd80402b01b38/dotnet-sdk-3.1.402-linux-arm.tar.gz --output dotnet-sdk-3.1.402-linux-arm.tar.gz \
+  && mkdir -p $HOME/dotnet && tar zxf dotnet-sdk-3.1.402-linux-arm.tar.gz -C $HOME/dotnet \
   && export DOTNET_ROOT=$HOME/dotnet \
   && export PATH=$PATH:$HOME/dotnet \
   && dotnet --version \
-  && rm dotnet-sdk-3.1.401-linux-arm.tar.gz
+  && rm dotnet-sdk-3.1.402-linux-arm.tar.gz
 
 # Good idea to switch back to the jenkins user.
 #USER jenkins
