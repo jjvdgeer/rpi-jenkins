@@ -4,6 +4,9 @@ MAINTAINER jjvdgeer <jjvdgeer@yahoo.com>
 # Jenkins version
 ENV JENKINS_VERSION 2.249.1
 
+# dotnet core download URL
+ENV DOTNETCORE_URL https://download.visualstudio.microsoft.com/download/pr/8f0dffe3-18f0-4d32-beb0-dbcb9a0d91a1/abe9a34e3f8916478f0bd80402b01b38/dotnet-sdk-3.1.402-linux-arm.tar.gz
+
 # Other env variables
 ENV JENKINS_HOME /var/jenkins_home
 ENV JENKINS_SLAVE_AGENT_PORT 50000
@@ -25,12 +28,13 @@ RUN uname -a && cat /etc/*release
 
 # Based on instructiions at https://docs.microsoft.com/en-us/dotnet/core/linux-prerequisites?tabs=netcore2x
 # Install depency for dotnet core 3.1.
-RUN curl https://download.visualstudio.microsoft.com/download/pr/8f0dffe3-18f0-4d32-beb0-dbcb9a0d91a1/abe9a34e3f8916478f0bd80402b01b38/dotnet-sdk-3.1.402-linux-arm.tar.gz --output dotnet-sdk-3.1.402-linux-arm.tar.gz \
-  && mkdir -p $HOME/dotnet && tar zxf dotnet-sdk-3.1.402-linux-arm.tar.gz -C $HOME/dotnet \
+RUN downloadname="$(basename ${DOTNETCORE_URL})" \
+  && curl ${DOTNETCORE_URL} --output ${downloadname} \
+  && mkdir -p $HOME/dotnet && tar zxf ${downloadname} -C $HOME/dotnet \
   && export DOTNET_ROOT=$HOME/dotnet \
   && export PATH=$PATH:$HOME/dotnet \
   && dotnet --version \
-  && rm dotnet-sdk-3.1.402-linux-arm.tar.gz
+  && rm ${downloadname}
 
 # Good idea to switch back to the jenkins user.
 #USER jenkins
