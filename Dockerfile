@@ -16,7 +16,7 @@ ENV JENKINS_SLAVE_AGENT_PORT 50000
 
 # Install dependencies
 RUN apt-get update \
-  && apt-get install -y --no-install-recommends curl openjdk-8-jdk gnupg2 docker.io git build-essential \
+  && apt-get install -y --no-install-recommends curl openjdk-8-jdk gnupg2 docker.io git build-essential subversion \
   && rm -rf /var/lib/apt/lists/*
 
 # Install dotnet
