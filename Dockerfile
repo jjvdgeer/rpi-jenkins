@@ -1,8 +1,8 @@
-FROM arm32v7/ubuntu:23.10
+FROM arm32v7/ubuntu:24.10
 MAINTAINER jjvdgeer <jjvdgeer@yahoo.com>
 
 # Jenkins version
-ENV JENKINS_VERSION 2.426.1
+ENV JENKINS_VERSION 2.479.1
 
 # Other env variables
 ENV JENKINS_HOME /var/jenkins_home
@@ -10,7 +10,7 @@ ENV JENKINS_SLAVE_AGENT_PORT 50000
 
 # Install dependencies
 RUN apt-get update \
-  && apt-get install -y --no-install-recommends curl openjdk-11-jdk gnupg2 docker.io git subversion \
+  && apt-get install -y --no-install-recommends curl openjdk-21-jdk gnupg2 docker.io git subversion \
   && rm -rf /var/lib/apt/lists/*
 
 # Good idea to switch back to the jenkins user.
